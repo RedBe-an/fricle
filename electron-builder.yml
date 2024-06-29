@@ -1,5 +1,5 @@
-appId: com.electron.app
-productName: electron-app
+appId: com.fricle.app
+productName: fricle
 directories:
   buildResources: build
 files:
@@ -12,9 +12,9 @@ files:
 asarUnpack:
   - resources/**
 win:
-  executableName: electron-app
+  executableName: fricle
 nsis:
-  artifactName: ${name}-${version}-setup.${ext}
+  artifactName: ${name}-${version}.${ext}
   shortcutName: ${productName}
   uninstallDisplayName: ${productName}
   createDesktopShortcut: always

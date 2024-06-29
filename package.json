@@ -1,10 +1,10 @@
 {
-  "name": "electron-app",
+  "name": "fricle",
   "version": "1.0.0",
-  "description": "An Electron application with React and TypeScript",
+  "description": "fri(ge)cle(aner)",
   "main": "./out/main/index.js",
-  "author": "example.com",
-  "homepage": "https://electron-vite.org",
+  "author": "방정훈",
+  "homepage": "https://github.com/aeirst/fricle",
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
@@ -60,6 +60,7 @@
     "electron-updater": "^6.1.7",
     "embla-carousel-react": "^8.0.0",
     "input-otp": "^1.2.0",
+    "lucide-react": "^0.399.0",
     "next-themes": "^0.3.0",
     "react-day-picker": "^8.10.0",
     "react-hook-form": "^7.51.0",
