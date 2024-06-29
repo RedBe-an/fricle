@@ -48,29 +48,32 @@ const columns: ColumnDef<Recipe>[] = [
   {
     accessorKey: 'ingredients',
     header: 'Ingredients',
-    cell: ({ row }) => (
-      <div className="lowercase">
-        {row.getValue('ingredients').slice(0, 5).join(', ')}
-        {row.getValue('ingredients').length > 5 && '...'}
-      </div>
-    )
+    cell: ({ row }) => {
+      const ingredients = row.getValue('ingredients') as string[]
+      return (
+        <div className="lowercase">
+          {ingredients.slice(0, 5).join(', ')}
+          {ingredients.length > 5 && '...'}
+        </div>
+      )
+    }
   },
   {
     accessorKey: 'instructions',
     header: 'Instructions',
-    cell: ({ row }) => (
-      <div>
-        {row
-          .getValue('instructions')
-          .slice(0, 3)
-          .map((instruction, index) => (
+    cell: ({ row }) => {
+      const instructions = row.getValue('instructions') as string[]
+      return (
+        <div>
+          {instructions.slice(0, 3).map((instruction, index) => (
             <div key={index}>
               {index + 1}. {instruction}
             </div>
           ))}
-        {row.getValue('instructions').length > 3 && '...'}
-      </div>
-    )
+          {instructions.length > 3 && '...'}
+        </div>
+      )
+    }
   },
   {
     id: 'actions',
