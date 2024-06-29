@@ -78,14 +78,16 @@ const columns: ColumnDef<Recipe>[] = [
   {
     accessorKey: 'ingredients',
     header: 'Ingredients',
-    cell: ({ row }) => <div className="lowercase">{row.getValue('ingredients').join(', ')}</div>
+    cell: ({ row }) => (
+      <div className="lowercase">{(row.getValue('ingredients') as string[]).join(', ')}</div>
+    )
   },
   {
     accessorKey: 'instructions',
     header: 'Instructions',
     cell: ({ row }) => (
       <div>
-        {row.getValue('instructions').map((instruction, index) => (
+        {(row.getValue('instructions') as string[]).map((instruction, index) => (
           <div key={index}>
             {index + 1}. {instruction}
           </div>
