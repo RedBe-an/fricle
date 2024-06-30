@@ -30,44 +30,14 @@ import {
   TableHeader,
   TableRow
 } from '@/components/ui/table'
-import { CarouselSpacing } from './carousel-cards'
+import sampleRecipes from './Recipes'
 
-interface Recipe {
+export interface Recipe {
   id: string
   title: string
   ingredients: string[]
   instructions: string[]
 }
-
-const sampleRecipes: Recipe[] = [
-  {
-    id: '1',
-    title: 'Spaghetti Bolognese',
-    ingredients: ['ground beef', 'onion', 'garlic', 'tomatoes', 'spaghetti'],
-    instructions: [
-      'Cook the spaghetti',
-      'Make the Bolognese sauce',
-      'Serve the spaghetti with the sauce'
-    ]
-  },
-  {
-    id: '2',
-    title: 'Grilled Chicken Salad',
-    ingredients: ['chicken breasts', 'lettuce', 'tomatoes', 'cucumbers', 'olive oil'],
-    instructions: ['Grill the chicken', 'Prepare the salad', 'Combine the chicken and salad']
-  },
-  {
-    id: '3',
-    title: 'Vegetable Stir-Fry',
-    ingredients: ['broccoli', 'carrots', 'bell peppers', 'garlic', 'soy sauce'],
-    instructions: [
-      'Prepare the vegetables',
-      'Heat the oil in a pan',
-      'Stir-fry the vegetables',
-      'Add the sauce'
-    ]
-  }
-]
 
 const columns: ColumnDef<Recipe>[] = [
   {
@@ -105,17 +75,17 @@ const columns: ColumnDef<Recipe>[] = [
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
+              <span className="sr-only">메뉴 열기</span>
               <MoreHorizontal className="h-4 w-4" />
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuLabel>Actions</DropdownMenuLabel>
+            <DropdownMenuLabel>레시피</DropdownMenuLabel>
             <DropdownMenuItem onClick={() => navigator.clipboard.writeText(recipe.id)}>
-              Copy Recipe ID
+              아이디 복사하기
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View Recipe Details</DropdownMenuItem>
+            <DropdownMenuItem>자세히 보기</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       )
@@ -198,7 +168,7 @@ const DataTableDemo = ({ recipes }: { recipes: Recipe[] }) => {
             ) : (
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-24 text-center">
-                  No results.
+                  결과 없음.
                 </TableCell>
               </TableRow>
             )}
@@ -213,7 +183,7 @@ const DataTableDemo = ({ recipes }: { recipes: Recipe[] }) => {
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
           >
-            Previous
+            이전 장
           </Button>
           <Button
             variant="outline"
@@ -221,7 +191,7 @@ const DataTableDemo = ({ recipes }: { recipes: Recipe[] }) => {
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
           >
-            Next
+            다음 장
           </Button>
         </div>
       </div>
@@ -242,21 +212,13 @@ const RecipeApp: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center p-0">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <br />
       <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl mb-10 pt-0">
         Fricle
       </h1>
       <IngredientInput onSearch={handleSearch} />
-      <div className="mt-2 w-full max-w-3xl mb-10">
-        {searched && <DataTableDemo recipes={recipes} />}
-      </div>
-      <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mb-4">지금 인기있는 👀</h4>
-      <CarouselSpacing></CarouselSpacing>
-      <h4 className="scroll-m-20 text-xl font-semibold tracking-tight mt-4 mb-4">
-        한 번 만들어보실래요?
-      </h4>
-      <CarouselSpacing></CarouselSpacing>
+      <div className="mt-4 w-full max-w-3xl">{searched && <DataTableDemo recipes={recipes} />}</div>
     </div>
   )
 }

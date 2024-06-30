@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "Spaghetti Carbonara",
+    "ingredients": [
+      "Spaghetti",
+      "Eggs",
+      "Parmesan cheese",
+      "Pancetta",
+      "Black pepper"
+    ],
+    "instructions": [
+      "Boil the spaghetti.",
+      "Fry the pancetta.",
+      "Mix eggs and cheese.",
+      "Combine spaghetti, pancetta, and egg mixture.",
+      "Season with black pepper."
+    ],
+    "image": "https://example.com/spaghetti-carbonara.jpg"
+  },
+  {
+    "id": "2",
+    "title": "Chicken Curry",
+    "ingredients": [
+      "Chicken",
+      "Onions",
+      "Tomatoes",
+      "Garlic",
+      "Ginger",
+      "Curry powder"
+    ],
+    "instructions": [
+      "Sauté onions, garlic, and ginger.",
+      "Add chicken and cook until browned.",
+      "Add tomatoes and curry powder.",
+      "Simmer until chicken is cooked through.",
+      "Serve with rice."
+    ],
+    "image": "https://example.com/chicken-curry.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Pancakes",
+    "ingredients": [
+      "Flour",
+      "Milk",
+      "Eggs",
+      "Baking powder",
+      "Salt",
+      "Sugar",
+      "Butter"
+    ],
+    "instructions": [
+      "Mix dry ingredients.",
+      "Whisk in wet ingredients.",
+      "Cook on a hot griddle.",
+      "Flip when bubbles form.",
+      "Serve with syrup."
+    ],
+    "image": "https://example.com/pancakes.jpg"
+  }
+]
