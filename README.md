@@ -2,7 +2,7 @@
 
 A tool that finds foods and provides recipes based on the names of food ingredients
 
-[![Fricle](https://github.com/aeirst/fricle/resources/Fricle.mp4)](https://github.com/aeirst/fricle/blob/master/resources/Fricle.mp4)
+[Video](https://github.com/aeirst/fricle/assets/161127101/4779170c-eb92-4b5d-9831-4d13618a1242)
 
 # installation
 just install, and use it!
